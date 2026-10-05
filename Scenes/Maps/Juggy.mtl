@@ -1,0 +1,126 @@
+newmtl 11Mtl
+Material Color
+Ka 0.373615 0.368591 0.383775
+Kd 0.373615 0.368591 0.383775
+Ks 0.0234425 0.0231273 0.02408 
+
+d 1
+
+Ns 0
+
+map_Ka Brick1_diff.png
+map_Kd Brick1_diff.png
+map_d Brick1_diff.png
+
+map_Bump Brick1_nmap.png
+
+newmtl Brick2Mtl
+Material Color
+Ka 0 0 0
+Kd 0 0 0
+Ks 0 0 0 
+
+d 0.2
+
+Ns 0
+
+map_Ka Brick2_diff.png
+map_Kd Brick2_diff.png
+map_d Brick2_diff.png
+
+newmtl Brick1Mtl
+Material Color
+Ka 0.436813 0.436813 0.487765
+Kd 0.436813 0.436813 0.487765
+Ks 0.0274079 0.0274079 0.0306049 
+
+d 1
+
+Ns 0
+
+map_Ka Brick1_diff.png
+map_Kd Brick1_diff.png
+map_d Brick1_diff.png
+
+map_Bump Brick1_nmap.png
+
+newmtl Wall49Mtl
+Material Color
+Ka 0.280124 0.280124 0.280124
+Kd 0.280124 0.280124 0.280124
+Ks 0.0175764 0.0175764 0.0175764 
+
+d 1
+
+Ns 0
+
+map_Ka Brick1_diff.png
+map_Kd Brick1_diff.png
+map_d Brick1_diff.png
+
+map_Bump Brick1_nmap.png
+
+newmtl Wall1Mtl
+Material Color
+Ka 0.173439 0.173439 0.173439
+Kd 0.173439 0.173439 0.173439
+Ks 0.0108824 0.0108824 0.0108824 
+
+d 1
+
+Ns 0
+
+map_Ka Brick1_diff.png
+map_Kd Brick1_diff.png
+map_d Brick1_diff.png
+
+map_Bump Brick1_nmap.png
+
+newmtl Columntop1Mtl
+Material Color
+Ka 0.176774 0.176774 0.176774
+Kd 0.176774 0.176774 0.176774
+Ks 0.0110917 0.0110917 0.0110917 
+
+d 1
+
+Ns 0
+
+map_Ka Brick1_diff.png
+map_Kd Brick1_diff.png
+map_d Brick1_diff.png
+
+map_Bump Brick1_nmap.png
+
+newmtl Brick7Mtl
+Material Color
+Ka 0.819964 0.819964 0.91575
+Kd 0.819964 0.819964 0.91575
+Ks 0.0514487 0.0514487 0.0574588 
+
+d 1
+
+Ns 0
+
+map_Ka Brick1_diff.png
+map_Kd Brick1_diff.png
+map_d Brick1_diff.png
+
+map_Bump Brick1_nmap.png
+
+newmtl Wall97Mtl
+Material Color
+Ka 0.0511221 0.0528416 0.139022
+Kd 0.0511221 0.0528416 0.139022
+Ks 0.00320766 0.00331555 0.00872298 
+
+d 1
+
+Ns 0
+
+map_Ka Brick1_diff.png
+map_Kd Brick1_diff.png
+map_d Brick1_diff.png
+
+map_Bump Brick1_nmap.png
+
