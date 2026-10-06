@@ -2,7 +2,7 @@ extends CharacterBody3D
 
 #Camera
 @onready var pivot: Node3D = %Pivot
-@onready var camera: Camera3D = %Camera3D
+@onready var camera: Camera3D = %Camera
 @onready var player: Node3D = $Model
 
 #Variables
