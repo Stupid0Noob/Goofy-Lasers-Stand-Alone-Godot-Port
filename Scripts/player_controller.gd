@@ -44,10 +44,14 @@ func _physics_process(delta: float) -> void:
 	move_direction.y = 0.0
 	move_direction = move_direction.normalized()
 	
+	var velocity_y := velocity.y
+	velocity.y = 0.0
 	velocity = velocity.move_toward(move_direction *  speed, acceleration * delta)
-	
+
 	if not is_on_floor():
-		velocity += Vector3(0, -1000, 0) * delta
+		velocity.y += velocity_y + -98 * delta
+	elif Input.is_action_pressed("space") and is_on_floor():
+		velocity.y += jump_power
 	
 	move_and_slide()
 

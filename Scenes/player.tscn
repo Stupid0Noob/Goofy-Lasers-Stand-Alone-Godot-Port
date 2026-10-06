@@ -9,7 +9,7 @@ height = 5.1243896
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_n8ag8"]
 
-[node name="Root" type="CharacterBody3D" unique_id=1112390985]
+[node name="Player" type="CharacterBody3D" unique_id=1112390985]
 script = ExtResource("1_cvnsp")
 
 [node name="Hitbox" type="CollisionShape3D" parent="." unique_id=1448810851]
