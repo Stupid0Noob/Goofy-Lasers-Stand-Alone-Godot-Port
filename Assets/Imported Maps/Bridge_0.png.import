@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b41k80pl0v4kc"
-path.s3tc="res://.godot/imported/WWIV_0.png-689607e54fd999107963a1ba03a10a2b.s3tc.ctex"
+uid="uid://dd2mxb223231"
+path.s3tc="res://.godot/imported/Bridge_0.png-37ab357bc9a46a41ae10435b458501a5.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://Scenes/Maps/WWIV_0.png"
-dest_files=["res://.godot/imported/WWIV_0.png-689607e54fd999107963a1ba03a10a2b.s3tc.ctex"]
+source_file="res://Assets/Imported Maps/Bridge_0.png"
+dest_files=["res://.godot/imported/Bridge_0.png-37ab357bc9a46a41ae10435b458501a5.s3tc.ctex"]
 
 [params]
 

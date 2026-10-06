@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://ci544r8nwjj5c"
-path="res://.godot/imported/WWIV.gltf-98f448ec5698a70c9f5981a7e1b3f791.scn"
+uid="uid://b1elirbkyn3qa"
+path="res://.godot/imported/Lobby.gltf-3cf4521d36baec392613ed7307d35eed.scn"
 
 [deps]
 
-source_file="res://Scenes/Maps/WWIV.gltf"
-dest_files=["res://.godot/imported/WWIV.gltf-98f448ec5698a70c9f5981a7e1b3f791.scn"]
+source_file="res://Assets/Imported Maps/Lobby.gltf"
+dest_files=["res://.godot/imported/Lobby.gltf-3cf4521d36baec392613ed7307d35eed.scn"]
 
 [params]
 

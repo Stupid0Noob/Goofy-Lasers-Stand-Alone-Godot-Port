@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://2bshstxujtam"
-path.s3tc="res://.godot/imported/Lobby_0.png-9bcf5050fb3a99229fde5313633130cb.s3tc.ctex"
+uid="uid://b41k80pl0v4kc"
+path.s3tc="res://.godot/imported/WWIV_0.png-9551d3d96333bd9666c49c81c01f6c71.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://Scenes/Maps/Lobby_0.png"
-dest_files=["res://.godot/imported/Lobby_0.png-9bcf5050fb3a99229fde5313633130cb.s3tc.ctex"]
+source_file="res://Assets/Imported Maps/WWIV_0.png"
+dest_files=["res://.godot/imported/WWIV_0.png-9551d3d96333bd9666c49c81c01f6c71.s3tc.ctex"]
 
 [params]
 

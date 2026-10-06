@@ -21,14 +21,10 @@ var camera_direction := Vector2.ZERO
 
 #Functions
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("left_mouse"):
-		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-	if event.is_action_pressed("ui_cancel"):
-		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	if event.is_action_pressed("right_mouse"):
-		pass
+		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	if event.is_action_released("right_mouse"):
-		pass
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 
 func _unhandled_input(event: InputEvent) -> void:	
 	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
@@ -51,7 +47,7 @@ func _physics_process(delta: float) -> void:
 	velocity = velocity.move_toward(move_direction *  speed, acceleration * delta)
 	
 	if not is_on_floor():
-		velocity += Vector3(0, -98, 0) * delta
+		velocity += Vector3(0, -1000, 0) * delta
 	
 	move_and_slide()
 

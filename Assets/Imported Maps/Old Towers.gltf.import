@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://ctfram03qb8y2"
-path="res://.godot/imported/Towers.gltf-bdb0a7796813fb0861e8f798259057b6.scn"
+uid="uid://bfojlbdtt8x3p"
+path="res://.godot/imported/Old Towers.gltf-74e44f64c3d3b836bb29629ebd510abb.scn"
 
 [deps]
 
-source_file="res://Scenes/Maps/Towers.gltf"
-dest_files=["res://.godot/imported/Towers.gltf-bdb0a7796813fb0861e8f798259057b6.scn"]
+source_file="res://Assets/Imported Maps/Old Towers.gltf"
+dest_files=["res://.godot/imported/Old Towers.gltf-74e44f64c3d3b836bb29629ebd510abb.scn"]
 
 [params]
 

@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cajkwultio8d5"
-path="res://.godot/imported/Bridge.gltf-cde16fbb81311fcd9cbf26b0fabf7af7.scn"
+uid="uid://ci544r8nwjj5c"
+path="res://.godot/imported/WWIV.gltf-d319cb5ab48009fe6a58d30127db0f2c.scn"
 
 [deps]
 
-source_file="res://Scenes/Maps/Bridge.gltf"
-dest_files=["res://.godot/imported/Bridge.gltf-cde16fbb81311fcd9cbf26b0fabf7af7.scn"]
+source_file="res://Assets/Imported Maps/WWIV.gltf"
+dest_files=["res://.godot/imported/WWIV.gltf-d319cb5ab48009fe6a58d30127db0f2c.scn"]
 
 [params]
 

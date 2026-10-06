@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bu5cok2p3m8if"
-path.s3tc="res://.godot/imported/Arena_0.png-fc4a820791072b3b2b493ef36abb1256.s3tc.ctex"
+uid="uid://bg57t0khklll8"
+path.s3tc="res://.godot/imported/That feeling when you feel when you feel you when the when is the feeling when you feel when the fee_0.png-82466ca9f9fdce6f838c4230c79bd280.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://Scenes/Maps/Arena_0.png"
-dest_files=["res://.godot/imported/Arena_0.png-fc4a820791072b3b2b493ef36abb1256.s3tc.ctex"]
+source_file="res://Assets/Imported Maps/That feeling when you feel when you feel you when the when is the feeling when you feel when the fee_0.png"
+dest_files=["res://.godot/imported/That feeling when you feel when you feel you when the when is the feeling when you feel when the fee_0.png-82466ca9f9fdce6f838c4230c79bd280.s3tc.ctex"]
 
 [params]
 

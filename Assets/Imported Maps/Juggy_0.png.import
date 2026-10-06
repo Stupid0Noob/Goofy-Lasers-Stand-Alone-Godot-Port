@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://di7vlew6gft0x"
-path.s3tc="res://.godot/imported/Lobby_1.png-b8cb7ec6b7c23ae07c3ced3e23a54d83.s3tc.ctex"
+uid="uid://bxvhtyq7lbs55"
+path.s3tc="res://.godot/imported/Juggy_0.png-d3050bbff382722543210b8716c61e1d.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "1600045791c8401250665443eea9a18f"
+"md5": "6b31cae0bab2276f816d837e5297bd27"
 }
 
 [deps]
 
-source_file="res://Scenes/Maps/Lobby_1.png"
-dest_files=["res://.godot/imported/Lobby_1.png-b8cb7ec6b7c23ae07c3ced3e23a54d83.s3tc.ctex"]
+source_file="res://Assets/Imported Maps/Juggy_0.png"
+dest_files=["res://.godot/imported/Juggy_0.png-d3050bbff382722543210b8716c61e1d.s3tc.ctex"]
 
 [params]
 

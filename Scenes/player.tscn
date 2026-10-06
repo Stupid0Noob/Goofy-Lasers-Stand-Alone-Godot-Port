@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://4hkrxtkoqaei"]
 
+[ext_resource type="Script" uid="uid://bjd165inc6jwu" path="res://Scripts/player_controller.gd" id="1_cvnsp"]
 [ext_resource type="PackedScene" uid="uid://co576h63vrq4j" path="res://Assets/Models/roblox-r6-rigged/source/r6_rigged.fbx" id="1_v0iea"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_fwlan"]
@@ -9,6 +10,7 @@ height = 5.1243896
 [sub_resource type="SphereShape3D" id="SphereShape3D_n8ag8"]
 
 [node name="Root" type="CharacterBody3D" unique_id=1112390985]
+script = ExtResource("1_cvnsp")
 
 [node name="Hitbox" type="CollisionShape3D" parent="." unique_id=1448810851]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5673218, 0)
@@ -18,10 +20,11 @@ shape = SubResource("CapsuleShape3D_fwlan")
 
 [node name="Pivot" type="Node3D" parent="." unique_id=411136931]
 unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9836875, 0)
 
 [node name="Crane" type="SpringArm3D" parent="Pivot" unique_id=1448768055]
 shape = SubResource("SphereShape3D_n8ag8")
-spring_length = 5.0
+spring_length = 10.0
 
 [node name="Camera" type="Camera3D" parent="Pivot/Crane" unique_id=310938371]
 unique_name_in_owner = true

@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://b1elirbkyn3qa"
-path="res://.godot/imported/Lobby.gltf-2c2cf79ff8a0d03e01699aa590d66108.scn"
+uid="uid://bkmh6y0vlc2j2"
+path="res://.godot/imported/Arena.gltf-345d0ee40fa3156ebe3b7bc5d91923c5.scn"
 
 [deps]
 
-source_file="res://Scenes/Maps/Lobby.gltf"
-dest_files=["res://.godot/imported/Lobby.gltf-2c2cf79ff8a0d03e01699aa590d66108.scn"]
+source_file="res://Assets/Imported Maps/Arena.gltf"
+dest_files=["res://.godot/imported/Arena.gltf-345d0ee40fa3156ebe3b7bc5d91923c5.scn"]
 
 [params]
 

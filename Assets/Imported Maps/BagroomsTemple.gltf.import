@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bkmh6y0vlc2j2"
-path="res://.godot/imported/Arena.gltf-0f1fe14bc88f50573906bad8a77a7169.scn"
+uid="uid://24xa1j7bcxrw"
+path="res://.godot/imported/BagroomsTemple.gltf-b42557bff25cbef30dfe107f6bf02874.scn"
 
 [deps]
 
-source_file="res://Scenes/Maps/Arena.gltf"
-dest_files=["res://.godot/imported/Arena.gltf-0f1fe14bc88f50573906bad8a77a7169.scn"]
+source_file="res://Assets/Imported Maps/BagroomsTemple.gltf"
+dest_files=["res://.godot/imported/BagroomsTemple.gltf-b42557bff25cbef30dfe107f6bf02874.scn"]
 
 [params]
 

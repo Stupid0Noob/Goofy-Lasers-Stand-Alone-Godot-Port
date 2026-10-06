@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://ceu4gg20n6r34"
-path="res://.godot/imported/That feeling when you feel when you feel you when the when is the feeling when you feel when the fee.gltf-b0b0931ee6791763b2b9a4d2658ba81d.scn"
+uid="uid://cajkwultio8d5"
+path="res://.godot/imported/Bridge.gltf-86d41cdf2de487384a4fb99b9d982ff3.scn"
 
 [deps]
 
-source_file="res://Scenes/Maps/That feeling when you feel when you feel you when the when is the feeling when you feel when the fee.gltf"
-dest_files=["res://.godot/imported/That feeling when you feel when you feel you when the when is the feeling when you feel when the fee.gltf-b0b0931ee6791763b2b9a4d2658ba81d.scn"]
+source_file="res://Assets/Imported Maps/Bridge.gltf"
+dest_files=["res://.godot/imported/Bridge.gltf-86d41cdf2de487384a4fb99b9d982ff3.scn"]
 
 [params]
 

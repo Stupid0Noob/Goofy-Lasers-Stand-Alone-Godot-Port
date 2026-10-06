@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d0aj5jfcvqk7n"
-path.s3tc="res://.godot/imported/Old Towers_0.png-6ce1b924aaed8accd2a3f1f92342c9f1.s3tc.ctex"
+uid="uid://48c6upedklwp"
+path.s3tc="res://.godot/imported/Towers_0.png-958e402281f9a82f7758a099e3aef7f3.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://Scenes/Maps/Old Towers_0.png"
-dest_files=["res://.godot/imported/Old Towers_0.png-6ce1b924aaed8accd2a3f1f92342c9f1.s3tc.ctex"]
+source_file="res://Assets/Imported Maps/Towers_0.png"
+dest_files=["res://.godot/imported/Towers_0.png-958e402281f9a82f7758a099e3aef7f3.s3tc.ctex"]
 
 [params]
 
