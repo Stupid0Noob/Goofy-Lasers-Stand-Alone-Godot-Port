@@ -5,8 +5,10 @@
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lpnmn"]
 resource_name = "material_8"
-albedo_color = Color(0.79541105, 0.9408054, 1, 1)
-metallic = 1.0
+transparency = 1
+albedo_color = Color(0.79607844, 0.9411765, 1, 0.627451)
+roughness = 0.0
+refraction_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_51m8v"]
 _surfaces = [{
@@ -39,9 +41,6 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_51m8v")
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_puvsm"]
-points = PackedVector3Array(0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5)
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ur3ik"]
 points = PackedVector3Array(0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5)
@@ -4869,11 +4868,6 @@ metadata/extras = {
 "Shape": "Block",
 "Transparency": 0.95
 }
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Changelog/Display" unique_id=554274000]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Changelog/Display/StaticBody3D" unique_id=1838290431]
-shape = SubResource("ConvexPolygonShape3D_puvsm")
 
 [node name="Neon" type="MeshInstance3D" parent="Changelog" unique_id=754699262]
 transform = Transform3D(10, 0, 0, 0, 0.1, 0, 0, 0, 1, 0, 0.5500183, 0)

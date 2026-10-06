@@ -18,6 +18,7 @@ extends CharacterBody3D
 @onready var forward := player.global_basis.z
 var last_move_direction := forward
 var camera_direction := Vector2.ZERO
+@onready var _acceleration := acceleration
 
 #Functions
 func _input(event: InputEvent) -> void:
@@ -43,16 +44,20 @@ func _physics_process(delta: float) -> void:
 	
 	move_direction.y = 0.0
 	move_direction = move_direction.normalized()
-	
+
 	var velocity_y := velocity.y
 	velocity.y = 0.0
-	velocity = velocity.move_toward(move_direction *  speed, acceleration * delta)
+
+	velocity = velocity.move_toward(move_direction * speed, acceleration * delta)
 
 	if not is_on_floor():
-		velocity.y += velocity_y + -98 * delta
+		velocity.y = velocity_y - 98 * delta
+		acceleration = _acceleration - 800
 	elif Input.is_action_pressed("space") and is_on_floor():
 		velocity.y += jump_power
-	
+	else:
+		acceleration = _acceleration
+
 	move_and_slide()
 
 	if move_direction.length() > 0.2:

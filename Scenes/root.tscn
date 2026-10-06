@@ -18,6 +18,18 @@ ssil_intensity = 16.0
 glow_enabled = true
 adjustment_enabled = true
 
+[sub_resource type="BoxMesh" id="BoxMesh_8pvmw"]
+size = Vector3(8.200195, 0.32373047, 8.23645)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uqoj6"]
+transparency = 1
+albedo_color = Color(3.752673, 1.3182534, 0, 0.5568628)
+metallic_specular = 0.0
+roughness = 0.0
+emission = Color(18.892157, 0, 0, 1)
+emission_energy_multiplier = 16.0
+refraction_enabled = true
+
 [node name="Root" type="Node3D" unique_id=1862688916]
 
 [node name="Lighting" type="WorldEnvironment" parent="." unique_id=1541287240]
@@ -40,3 +52,10 @@ speed = 16.0
 acceleration = 1000.0
 rotate_speed = 10.0
 jump_power = 30.0
+
+[node name="BouncePads" type="Node" parent="." unique_id=2027339697]
+
+[node name="BouncePad" type="MeshInstance3D" parent="BouncePads" unique_id=76806472]
+transform = Transform3D(1, 0, 0, 0, 0.70710677, -0.70710677, 0, 0.70710677, 0.70710677, -0.37060547, -0.17051128, 79.66789)
+mesh = SubResource("BoxMesh_8pvmw")
+surface_material_override/0 = SubResource("StandardMaterial3D_uqoj6")
