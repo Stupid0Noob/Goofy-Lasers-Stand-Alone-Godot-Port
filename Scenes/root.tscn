@@ -13,7 +13,10 @@ sky_material = SubResource("ProceduralSkyMaterial_jyf1o")
 [sub_resource type="Environment" id="Environment_8pvmw"]
 background_mode = 2
 sky = SubResource("Sky_i04dx")
+ssil_radius = 16.0
+ssil_intensity = 16.0
 glow_enabled = true
+adjustment_enabled = true
 
 [node name="Root" type="Node3D" unique_id=1862688916]
 
@@ -28,7 +31,10 @@ metadata/_edit_lock_ = true
 [node name="Lobby" parent="." unique_id=1403846718 instance=ExtResource("1_8pvmw")]
 
 [node name="Player" parent="." unique_id=1112390985 instance=ExtResource("2_c3mwy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 136.27473, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.4491386, 0)
+floor_stop_on_slope = false
+floor_constant_speed = true
+floor_max_angle = 1.553343
 sensitivity = 0.2
 speed = 16.0
 acceleration = 1000.0
