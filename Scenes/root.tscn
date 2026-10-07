@@ -3,32 +3,34 @@
 [ext_resource type="PackedScene" uid="uid://c1scjs5x8303y" path="res://Scenes/Maps/lobby.tscn" id="1_8pvmw"]
 [ext_resource type="PackedScene" uid="uid://4hkrxtkoqaei" path="res://Scenes/player.tscn" id="2_c3mwy"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jyf1o"]
-sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_vnucn"]
 
 [sub_resource type="Sky" id="Sky_i04dx"]
-sky_material = SubResource("ProceduralSkyMaterial_jyf1o")
+sky_material = SubResource("PhysicalSkyMaterial_vnucn")
 
 [sub_resource type="Environment" id="Environment_8pvmw"]
 background_mode = 2
 sky = SubResource("Sky_i04dx")
+tonemap_mode = 3
+ssr_enabled = true
+ssao_enabled = true
+ssil_enabled = true
 ssil_radius = 16.0
 ssil_intensity = 16.0
 glow_enabled = true
-adjustment_enabled = true
+glow_intensity = 0.25
 
 [sub_resource type="BoxMesh" id="BoxMesh_8pvmw"]
 size = Vector3(8.200195, 0.32373047, 8.23645)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uqoj6"]
-transparency = 1
-albedo_color = Color(3.752673, 1.3182534, 0, 0.5568628)
+albedo_color = Color(3.752673, 1.3182534, 0, 0)
 metallic_specular = 0.0
 roughness = 0.0
 emission = Color(18.892157, 0, 0, 1)
 emission_energy_multiplier = 16.0
-refraction_enabled = true
+uv1_scale = Vector3(5, 5, 5)
+uv2_scale = Vector3(0, 0, 0)
 
 [node name="Root" type="Node3D" unique_id=1862688916]
 
@@ -36,9 +38,20 @@ refraction_enabled = true
 environment = SubResource("Environment_8pvmw")
 
 [node name="Sun" type="DirectionalLight3D" parent="Lighting" unique_id=364816253]
-transform = Transform3D(1, 0, 0, 0, -0.463296, 0.8862036, 0, -0.8862036, -0.463296, 0, 0, 0)
+transform = Transform3D(0.70710677, -0.055478964, 0.70492697, 0, 0.99691737, 0.0784591, -0.70710677, -0.055478964, 0.70492697, 0, 0, 0)
+light_color = Color(1.353256, 1.1438694, 0.9868294, 1)
+light_angular_distance = 10.6
 shadow_enabled = true
-metadata/_edit_lock_ = true
+shadow_caster_mask = 4293918720
+
+[node name="Moon" type="DirectionalLight3D" parent="Lighting" unique_id=1712454656]
+transform = Transform3D(-0.5, 0.052869584, -0.86441, 0, 0.99813473, 0.061048537, 0.86602527, 0.030524272, -0.49906743, 0, 0, 0)
+light_color = Color(0, 1.576763, 1.576763, 1)
+light_energy = 0.025
+light_angular_distance = 9.6
+light_negative = true
+shadow_enabled = true
+shadow_caster_mask = 4293918720
 
 [node name="Lobby" parent="." unique_id=1403846718 instance=ExtResource("1_8pvmw")]
 
@@ -56,6 +69,6 @@ jump_power = 30.0
 [node name="BouncePads" type="Node" parent="." unique_id=2027339697]
 
 [node name="BouncePad" type="MeshInstance3D" parent="BouncePads" unique_id=76806472]
-transform = Transform3D(1, 0, 0, 0, 0.70710677, -0.70710677, 0, 0.70710677, 0.70710677, -0.37060547, -0.17051128, 79.66789)
+transform = Transform3D(0.85, 0, 0, 0, 0.70710677, -0.6010408, 0, 0.70710677, 0.6010408, -0.37060547, -0.17051128, 79.66789)
 mesh = SubResource("BoxMesh_8pvmw")
 surface_material_override/0 = SubResource("StandardMaterial3D_uqoj6")
