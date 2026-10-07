@@ -3,26 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://2bshstxujtam" path="res://Assets/Imported Maps/Lobby_0.png" id="1_tm1g2"]
 [ext_resource type="Texture2D" uid="uid://di7vlew6gft0x" path="res://Assets/Imported Maps/Lobby_1.png" id="2_a311e"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lpnmn"]
-resource_name = "material_8"
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ucmen"]
 transparency = 1
-albedo_color = Color(1.9477015, 2.2891366, 2.427556, 0.627451)
-roughness = 0.0
-refraction_enabled = true
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_51m8v"]
-_surfaces = [{
-"aabb": AABB(-0.5, -0.5, -0.5, 1, 1, 1),
-"format": 34896613377,
-"index_count": 36,
-"index_data": PackedByteArray("AAABAAIAAQADAAIAAwAAAAIAAQAAAAQAAAADAAUAAwABAAYAAAAHAAQABwABAAQABwAAAAUAAQAHAAYAAwAHAAUABwADAAYA"),
-"name": "material_8",
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 8,
-"vertex_data": PackedByteArray("////////AAD//wAAAAAAAP//AAD//wAAAAAAAP//AAD/////AAAAAAAA/////wAAAAAAAAAAAAAAAP//AAAAAA==")
-}]
-blend_shape_mode = 0
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_1435d"]
 resource_name = "Lobby_Display"
@@ -32,15 +14,26 @@ _surfaces = [{
 "format": 34896613407,
 "index_count": 36,
 "index_data": PackedByteArray("AAABAAIAAQAAAAMABAAFAAYABQAEAAcACAAJAAoACQAIAAsADAANAA4ADQAMAA8AEAARABIAEQAQABMAFAAVABYAFQAUABcA"),
-"material": SubResource("StandardMaterial3D_lpnmn"),
-"name": "material_8",
+"material": SubResource("StandardMaterial3D_ucmen"),
+"name": "dih",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
 "vertex_count": 24,
 "vertex_data": PackedByteArray("////////qir//wAAAACqKv//AAD//6oq/////wAAqir///////+qKgAA//8AAKoq/////wAAqioAAP////+qKv///////wAAAAAAAP//AAAAAP////8AAP//AAD//wAAAAAAAP//qioAAP//AACqKgAA/////6oqAAAAAAAAqir//wAAAACqKgAAAAD//6oq//8AAP//qioAAAAAAACqKgAA//8AAAAA//8AAAAAAAD/////AAAAAAAAAAAAAAAAqqpUVaqqVFWqqlRVqqpUVVTVqipU1aoqVNWqKlTVqir/f/9//3//f/9//3//f/9/VNVU1VTVVNVU1VTVVNVU1aoqVNWqKlTVqipU1aoqVNX///9/////f////3////9/")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_51m8v")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6ha3r"]
+transparency = 1
+albedo_color = Color(0.41960785, 0.8117647, 1, 0)
+roughness = 0.0
+emission = Color(0.6378432, 0.6378432, 0.63784313, 1)
+refraction_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5u7rw"]
+emission_enabled = true
+emission = Color(0.5157923, 0.6725292, 1, 1)
+emission_energy_multiplier = 16.0
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ur3ik"]
 points = PackedVector3Array(0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5)
@@ -4844,6 +4837,7 @@ metadata/extras = {
 [node name="Display" type="MeshInstance3D" parent="Changelog" unique_id=1274780865]
 transform = Transform3D(-10, 0, 0, 0, 12, 0, 0, 0, -0.25, 0, 7.5, 0)
 mesh = SubResource("ArrayMesh_1435d")
+surface_material_override/0 = SubResource("StandardMaterial3D_6ha3r")
 metadata/extras = {
 "Anchored": true,
 "Color": "(152, 222, 255)",
@@ -4857,6 +4851,7 @@ metadata/extras = {
 [node name="Neon" type="MeshInstance3D" parent="Changelog" unique_id=754699262]
 transform = Transform3D(10, 0, 0, 0, 0.1, 0, 0, 0, 1, 0, 0.5500183, 0)
 mesh = SubResource("ArrayMesh_1435d")
+surface_material_override/0 = SubResource("StandardMaterial3D_5u7rw")
 metadata/extras = {
 "Anchored": true,
 "Color": "(152, 222, 255)",
