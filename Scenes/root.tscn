@@ -49,7 +49,6 @@ light_color = Color(1.353256, 1.1438694, 0.9868294, 1)
 shadow_enabled = true
 shadow_opacity = 0.65
 shadow_blur = 10.0
-directional_shadow_mode = 0
 
 [node name="Lobby" parent="." unique_id=1403846718 instance=ExtResource("1_8pvmw")]
 
