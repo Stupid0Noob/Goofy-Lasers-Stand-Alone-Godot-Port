@@ -17,10 +17,14 @@ extends CharacterBody3D
 @export var rotate_speed := 0.0
 @export var jump_power := 0.0
 
+@onready var _acceleration := acceleration
 @onready var forward := player.global_basis.z
+
 var last_move_direction := forward
 var camera_direction := Vector2.ZERO
-@onready var _acceleration := acceleration
+var walking = false
+var jump = false
+var falling = false
 
 #Functions
 func _input(event: InputEvent) -> void:
@@ -31,11 +35,11 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("scroll_up") and crane.spring_length > 0:
 		var tween = get_tree().create_tween()
 		tween.set_ease(Tween.EASE_OUT_IN)
-		tween.tween_property(crane, "spring_length", clamp(crane.spring_length - 15, 0, 0), 0.25)
+		tween.tween_property(crane, "spring_length", clamp(crane.spring_length - 15, 0, 100), 0.25)
 	if event.is_action_pressed("scroll_down"):
 		var tween = get_tree().create_tween()
 		tween.set_ease(Tween.EASE_OUT_IN)
-		tween.tween_property(crane, "spring_length", crane.spring_length + 15, 0.25)
+		tween.tween_property(crane, "spring_length", clamp(crane.spring_length + 15, 0, 100), 0.25)
 
 func _unhandled_input(event: InputEvent) -> void:	
 	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
@@ -64,19 +68,16 @@ func _physics_process(delta: float) -> void:
 		velocity.y = velocity_y - 98 * delta
 		acceleration = _acceleration - 800
 
-		animation_tree["parameters/walking/blend_amount"] = lerp(animation_tree["parameters/walking/blend_amount"], 0.0, 10.0 * delta)
-		animation_tree["parameters/jump/blend_amount"] = lerp(animation_tree["parameters/jump/blend_amount"], 1.0, 10.0 * delta)
-
-		if velocity.y < 0.0:
-			animation_tree["parameters/falling/blend_amount"] = lerp(animation_tree["parameters/falling/blend_amount"], 1.0, 10.0 * delta)
+		if velocity.y < -10.0:
+			falling = true
+			jump = false
 	elif Input.is_action_pressed("space") and is_on_floor():
 		velocity.y += jump_power
-		animation_tree["parameters/jump/blend_amount"] = lerp(animation_tree["parameters/jump/blend_amount"], 0.0, 50.0 * delta)
-		animation_tree["parameters/falling/blend_amount"] = lerp(animation_tree["parameters/falling/blend_amount"], 0.0, 50.0 * delta)
+		jump = true
 	else:
 		acceleration = _acceleration
-		animation_tree["parameters/falling/blend_amount"] = lerp(animation_tree["parameters/falling/blend_amount"], 0.0, 20.0 * delta)
-		animation_tree["parameters/jump/blend_amount"] = lerp(animation_tree["parameters/jump/blend_amount"], 0.0, 10.0 * delta)
+		falling = false
+		jump = false
 
 	move_and_slide()
 
@@ -89,6 +90,23 @@ func _physics_process(delta: float) -> void:
 	var move_speed := velocity.length()
 	
 	if move_speed > 0 and is_on_floor():
+		walking = true
+	else:
+		walking = false
+	
+	if walking:
 		animation_tree["parameters/walking/blend_amount"] = lerp(animation_tree["parameters/walking/blend_amount"], 1.0, 10.0 * delta)
+		animation_tree["parameters/falling/blend_amount"] = lerp(animation_tree["parameters/falling/blend_amount"], 0.0, 10.0 * delta)
+		animation_tree["parameters/jump/blend_amount"] = lerp(animation_tree["parameters/jump/blend_amount"], 0.0, 10.0 * delta)
+	elif jump:
+		animation_tree["parameters/jump/blend_amount"] = lerp(animation_tree["parameters/jump/blend_amount"], 1.0, 10.0 * delta)
+		animation_tree["parameters/walking/blend_amount"] = lerp(animation_tree["parameters/walking/blend_amount"], 0.0, 10.0 * delta)
+		animation_tree["parameters/falling/blend_amount"] = lerp(animation_tree["parameters/falling/blend_amount"], 0.0, 20.0 * delta)
+	elif falling:
+		animation_tree["parameters/jump/blend_amount"] = lerp(animation_tree["parameters/jump/blend_amount"], 0.0, 10.0 * delta)
+		animation_tree["parameters/walking/blend_amount"] = lerp(animation_tree["parameters/walking/blend_amount"], 0.0, 10.0 * delta)
+		animation_tree["parameters/falling/blend_amount"] = lerp(animation_tree["parameters/falling/blend_amount"], 1.0, 20.0 * delta)
 	else:
 		animation_tree["parameters/walking/blend_amount"] = lerp(animation_tree["parameters/walking/blend_amount"], 0.0, 10.0 * delta)
+		animation_tree["parameters/falling/blend_amount"] = lerp(animation_tree["parameters/falling/blend_amount"], 0.0, 10.0 * delta)
+		animation_tree["parameters/jump/blend_amount"] = lerp(animation_tree["parameters/jump/blend_amount"], 0.0, 10.0 * delta)

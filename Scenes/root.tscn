@@ -24,6 +24,7 @@ glow_enabled = true
 glow_intensity = 0.25
 volumetric_fog_enabled = true
 volumetric_fog_density = 0.001
+volumetric_fog_emission = Color(0.6387527, 0.75818515, 1, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_8pvmw"]
 size = Vector3(8.200195, 0.32373047, 8.23645)
@@ -47,6 +48,14 @@ environment = SubResource("Environment_8pvmw")
 transform = Transform3D(0.70710677, -0.055478964, 0.70492697, 0, 0.99691737, 0.0784591, -0.70710677, -0.055478964, 0.70492697, 0, 0, 0)
 light_color = Color(1.353256, 1.1438694, 0.9868294, 1)
 shadow_enabled = true
+shadow_opacity = 0.65
+shadow_blur = 10.0
+
+[node name="BlackHole" type="DirectionalLight3D" parent="Lighting" unique_id=987678086]
+transform = Transform3D(-0.70710665, -0.055478975, -0.7049271, 7.450581e-09, 0.9969174, -0.0784591, 0.70710677, -0.05547897, -0.7049269, 0, 0, 0)
+light_color = Color(1.0834627, 1.2030357, 1.347699, 1)
+light_energy = 0.396
+light_negative = true
 shadow_opacity = 0.65
 shadow_blur = 10.0
 
