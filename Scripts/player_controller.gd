@@ -67,7 +67,7 @@ func _physics_process(delta: float) -> void:
 		animation_tree["parameters/walking/blend_amount"] = lerp(animation_tree["parameters/walking/blend_amount"], 0.0, 10.0 * delta)
 		animation_tree["parameters/jump/blend_amount"] = lerp(animation_tree["parameters/jump/blend_amount"], 1.0, 10.0 * delta)
 
-		if velocity.y < -10.0:
+		if velocity.y < 0.0:
 			animation_tree["parameters/falling/blend_amount"] = lerp(animation_tree["parameters/falling/blend_amount"], 1.0, 10.0 * delta)
 	elif Input.is_action_pressed("space") and is_on_floor():
 		velocity.y += jump_power
