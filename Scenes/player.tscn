@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://4hkrxtkoqaei"]
 
-[ext_resource type="Script" uid="uid://bjd165inc6jwu" path="res://Scripts/player_controller.gd" id="1_cvnsp"]
+[ext_resource type="Script" uid="uid://bjd165inc6jwu" path="res://Scripts/Player Controller/movement_handler.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://babp1syeg6k78" path="res://Assets/Models/roblox-r6-rigged/textures/Head1_diff.png" id="2_cvnsp"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_fwlan"]
