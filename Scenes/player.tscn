@@ -1,7 +1,15 @@
 [gd_scene format=4 uid="uid://4hkrxtkoqaei"]
 
-[ext_resource type="Script" uid="uid://bjd165inc6jwu" path="res://Scripts/Player Controller/movement_handler.gd" id="1_cvnsp"]
+[ext_resource type="Script" uid="uid://cuwn71adxpb28" path="res://Scripts/Player Controller/State Machine/States/player_state.gd" id="1_8erm5"]
 [ext_resource type="Texture2D" uid="uid://babp1syeg6k78" path="res://Assets/Models/roblox-r6-rigged/textures/Head1_diff.png" id="2_cvnsp"]
+[ext_resource type="Script" uid="uid://coh53ohhhryo3" path="res://Scripts/Player Controller/State Machine/state_machine.gd" id="3_gymyn"]
+[ext_resource type="Script" uid="uid://j1uvw02n6xx7" path="res://Scripts/Player Controller/State Machine/States/idle.gd" id="4_pu2lt"]
+[ext_resource type="Script" uid="uid://bqgdsv2orspye" path="res://Scripts/Player Controller/State Machine/States/walking.gd" id="5_ukyrk"]
+[ext_resource type="Script" uid="uid://ba3l35figxj5j" path="res://Scripts/Player Controller/State Machine/States/jump.gd" id="6_7dp3o"]
+[ext_resource type="Script" uid="uid://bjd165inc6jwu" path="res://Scripts/Player Controller/turn_handler.gd" id="7_f1ek2"]
+[ext_resource type="Script" uid="uid://cdcqkx4hk2rub" path="res://Scripts/Player Controller/State Machine/States/falling.gd" id="7_h4iuc"]
+[ext_resource type="Script" uid="uid://p68f3be2tdj" path="res://Scripts/Player Controller/camera_handler.gd" id="8_fd4e3"]
+[ext_resource type="Script" uid="uid://cks2akrk0gpkb" path="res://Scripts/Player Controller/animations_handler.gd" id="10_qqcod"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_fwlan"]
 radius = 1.0537109
@@ -587,7 +595,7 @@ animation = &"walking"
 [sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_gymyn"]
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_1h4qu"]
-graph_offset = Vector2(-64.11129, 1.745758)
+graph_offset = Vector2(-88.034546, -34.567245)
 nodes/output/position = Vector2(1280, 80)
 nodes/anim_walking/node = SubResource("AnimationNodeAnimation_8erm5")
 nodes/anim_walking/position = Vector2(-40, 260)
@@ -606,7 +614,24 @@ nodes/walking/position = Vector2(180, 120)
 node_connections = [&"output", 0, &"falling", &"jump", 0, &"walking", &"jump", 1, &"anim_jump", &"falling", 0, &"jump", &"falling", 1, &"anim_falling", &"walking", 0, &"anim_idle", &"walking", 1, &"anim_walking"]
 
 [node name="Player" type="CharacterBody3D" unique_id=1112390985]
-script = ExtResource("1_cvnsp")
+script = ExtResource("7_f1ek2")
+
+[node name="StateMachine" type="Node" parent="." unique_id=75439958 node_paths=PackedStringArray("initial_state")]
+unique_name_in_owner = true
+script = ExtResource("3_gymyn")
+initial_state = NodePath("Idle")
+
+[node name="Idle" type="Node" parent="StateMachine" unique_id=1209066565]
+script = ExtResource("4_pu2lt")
+
+[node name="Walking" type="Node" parent="StateMachine" unique_id=57896472]
+script = ExtResource("5_ukyrk")
+
+[node name="Jump" type="Node" parent="StateMachine" unique_id=785654054]
+script = ExtResource("6_7dp3o")
+
+[node name="Falling" type="Node" parent="StateMachine" unique_id=78499515]
+script = ExtResource("7_h4iuc")
 
 [node name="Hitbox" type="CollisionShape3D" parent="." unique_id=1448810851]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5673218, 0)
@@ -615,6 +640,8 @@ shape = SubResource("CapsuleShape3D_fwlan")
 [node name="Pivot" type="Node3D" parent="." unique_id=411136931]
 unique_name_in_owner = true
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 1.9836875, 0)
+script = ExtResource("8_fd4e3")
+sensitivity = 0.5
 
 [node name="Crane" type="SpringArm3D" parent="Pivot" unique_id=1448768055]
 unique_name_in_owner = true
@@ -626,6 +653,7 @@ unique_name_in_owner = true
 
 [node name="Model" type="Node3D" parent="." unique_id=1002718761]
 transform = Transform3D(100, 0, 0, 0, 99.99999, 0, 0, 0, 99.99999, 0, 0, 0)
+script = ExtResource("1_8erm5")
 
 [node name="Skeleton3D" type="Skeleton3D" parent="Model" unique_id=796246393]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
@@ -717,8 +745,12 @@ libraries/ = SubResource("AnimationLibrary_fkybt")
 movie_quit_on_finish = true
 
 [node name="AnimationTree" type="AnimationTree" parent="." unique_id=1627490220]
+unique_name_in_owner = true
+root_node = NodePath("%AnimationTree/..")
+root_motion_track = NodePath("Model/Skeleton3D:Torso")
 tree_root = SubResource("AnimationNodeBlendTree_1h4qu")
 anim_player = NodePath("../AnimationPlayer")
 parameters/jump/blend_amount = 0.0
 parameters/falling/blend_amount = 0.0
 parameters/walking/blend_amount = 0.0
+script = ExtResource("10_qqcod")

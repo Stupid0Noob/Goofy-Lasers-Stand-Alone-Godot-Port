@@ -66,11 +66,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.4491386, 0)
 floor_stop_on_slope = false
 floor_constant_speed = true
 floor_max_angle = 1.553343
-sensitivity = 0.2
 speed = 16.0
 acceleration = 1000.0
 rotate_speed = 10.0
 jump_power = 30.0
+decrease_acceleration = 900.0
 
 [node name="BouncePads" type="Node" parent="." unique_id=2027339697]
 

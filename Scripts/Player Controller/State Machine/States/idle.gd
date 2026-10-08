@@ -3,7 +3,10 @@ extends PlayerState
 func enter(previous_state_path: String, data := {}) -> void:
 	player.animation_player.play("idle")
 
-func physics_update(_delta: float) -> void:
+func exit() -> void:
+	pass
+
+func physics_update(delta: float) -> void:
 	var input_direction := Input.get_vector("a", "d", "w", "s") 
 
 	if not player.is_on_floor():

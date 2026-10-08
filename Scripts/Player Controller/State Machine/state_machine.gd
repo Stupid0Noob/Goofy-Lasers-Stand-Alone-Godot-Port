@@ -3,7 +3,9 @@ extends Node
 
 @export var initial_state: State = null
 
-@onready var state: State = (func get_initial_state() -> State: return initial_state if initial_state != null else get_child(0)).call()
+@onready var state: State = (func get_initial_state() -> State:
+	return initial_state if initial_state != null else get_child(0)
+).call()
 
 func _ready() -> void:
 	for state_node: State in find_children("*", "State"):
@@ -23,7 +25,7 @@ func _physics_process(delta: float) -> void:
 
 func _transition_to_next_state(target_state_path: String, data: Dictionary = {}) -> void:
 	if not has_node(target_state_path):
-		printerr(owner.name + ": tried to shit " + target_state_path + " but it farted and exploded")
+		printerr(owner.name + ": Trying to transition to state " + target_state_path + " but it does not exist.")
 		return
 
 	var previous_state_path := state.name
